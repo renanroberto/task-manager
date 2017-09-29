@@ -1,0 +1,111 @@
+body {
+  margin: 0;
+  background-color: #368fb0;
+}
+
+.center {
+  text-align: center;
+}
+
+.title {
+  padding: 10px;
+  font-size: 3em;
+  font-family: 'Playfair Display SC', serif;
+  text-shadow: 1px 1px 5px grey;
+  color: white;
+}
+
+#app {
+  display: flex;
+  min-height: 50vh;
+  padding: 10px;
+
+  flex-direction: column;
+  align-items: center;
+
+  border-radius: 10px;
+  background-color: #8ac5db;
+}
+
+.new-task {
+  padding: 10px;
+}
+
+.view-tasks {
+  display: flex;
+  min-width: 50vw;
+  max-width: 100vw;
+  padding: 10px;
+
+  flex-direction: column-reverse;
+  align-items: baseline;
+
+  border-radius: 10px;
+  border: 1px solid lightgrey;
+  background-color: #f2f2f2;
+}
+
+.task {
+  font-size: 1.5em;
+  font-family: 'Pangolin', cursive;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.task:hover {
+  cursor: pointer;
+}
+.task::before {
+  display: inline-block;
+  padding: 5px;
+  content: '\2666';
+  color: black;
+}
+
+.task-holder {
+  display: flex;
+  width: 100%;
+
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+
+  border-bottom: 1px solid lightgrey;
+}
+
+.cross {
+  font-size: 1.5em;
+  cursor: pointer;
+  color: grey;
+}
+
+@keyframes strike{
+  0%   { width : 0; }
+  100% { width: 100%; }
+}
+.strike {
+  position: relative;
+}
+.strike:after {
+  content: ' ';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: green;
+  animation-name: strike;
+  animation-duration: 0.3s;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
