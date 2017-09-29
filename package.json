@@ -1,0 +1,23 @@
+{
+  "name": "tasks",
+  "version": "1.0.0",
+  "description": "Task Manager",
+  "main": "index.js",
+  "scripts": {
+    "start": "node bin/server.js",
+    "test": "nodemon bin/server.js"
+  },
+  "keywords": [
+    "task",
+    "vue",
+    "node",
+    "javascript"
+  ],
+  "author": "Renan Roberto <renanroberto1@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.15.5",
+    "http": "0.0.0"
+  }
+}
