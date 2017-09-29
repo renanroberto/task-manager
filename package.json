@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "node bin/server.js",
-    "test": "nodemon bin/server.js"
+    "test": "nodemon bin/server.js",
+    "build": "cp views/* dist/"
   },
   "keywords": [
     "task",
