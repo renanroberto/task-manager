@@ -7,7 +7,8 @@ const app = new Vue({
     newTask: '',
     tasks: [
       { text: 'Example task', done: false }
-    ]
+    ],
+    toSave: { _id: 'new Date().toISOString()', data: this.tasks}
   },
 
   methods: {
@@ -23,15 +24,17 @@ const app = new Vue({
       if (index > -1) this.tasks.splice(index, 1)
     },
 
+    // save each item
     save () {
-      db.put({ _id: 'today', data: this.tasks }, (err, res) => {
+      db.put(this.toSave, (err, res) => {
         if (!err) console.log("Save succeful!")
         else console.log('ERROR: ' + err)
       })
     },
 
+    // print loaded docs
     load () {
-      db.allDocs({}, (err, doc) => {
+      db.allDocs({include_docs: true, descending: true}, function(err, doc) {
         if (!err) console.log(doc.rows)
         else console.log('ERROR: ' + err)
       })
@@ -40,9 +43,5 @@ const app = new Vue({
 
   beforeMount: function () {
     this.load()
-  },
-
-  mounted: function () {
-    // this.save()
   }
 })

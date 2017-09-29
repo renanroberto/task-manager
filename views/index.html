@@ -28,7 +28,7 @@
         <br>
         <div class="view-tasks">
           <div style="align-self: flex-end; padding-top: 10px">
-            <button class="btn btn-success">Save</button>
+            <button class="btn btn-success" @click="save">Save</button>
           </div>
           <div class="task-holder" v-for="task in tasks">
             <span class="task">
