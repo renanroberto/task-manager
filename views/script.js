@@ -24,10 +24,25 @@ const app = new Vue({
     },
 
     save () {
-      db.put({ _id: new Date().toISOString(), data: this.tasks }, (err, res) => {
-        if (err) console.log(err)
-        else console.log(res)
+      db.put({ _id: 'today', data: this.tasks }, (err, res) => {
+        if (!err) console.log("Save succeful!")
+        else console.log('ERROR: ' + err)
+      })
+    },
+
+    load () {
+      db.allDocs({}, (err, doc) => {
+        if (!err) console.log(doc.rows)
+        else console.log('ERROR: ' + err)
       })
     }
+  },
+
+  beforeMount: function () {
+    this.load()
+  },
+
+  mounted: function () {
+    // this.save()
   }
 })
