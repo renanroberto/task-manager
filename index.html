@@ -19,6 +19,10 @@
     <div class="center">
       <div class="title">Task Manager</div>
       <div id="app" class="container">
+        <div style="text-align: center; padding: 10px">
+          <input type="color" v-model="bgColor">
+          <input type="color" v-model="innerColor">
+        </div>
         <div class="new-task">
           <div class="input-group input-group-lg">
             <input type="text" class="form-control" v-model="newTask" @keyup.enter="add" maxlength="50" placeholder="Add a new task" autofocus>
