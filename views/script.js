@@ -1,34 +1,59 @@
+const db = new PouchDB('tasks')
+
 const app = new Vue({
   el: '#app',
 
   data: {
     newTask: '',
-    tasks: [
-      { text: 'Example task', done: false }
-    ]
+    tasks: [],
+    status: 'loading...'
   },
 
   methods: {
     add () {
-      if (this.newTask !== '') {
-        this.tasks.push({ text: this.newTask, done: false })
+      let task = {
+        _id: new Date().toISOString(),
+        title: this.newTask,
+        done: false
       }
+
       this.newTask = ''
+
+      db.put(task)
+      .catch(err => {
+        this.status = 'Error! Can\'t save'
+        console.error('Error on save', err.message)
+      })
+    },
+
+    load () {
+      db.allDocs({ include_docs: true })
+      .then(docs => {
+        this.tasks = []
+
+        docs.rows.forEach(res => this.tasks.push(res.doc))
+
+        if (this.tasks.length === 0) this.status = "There is no task to do!"
+      })
+      .catch(err => {
+        this.status = 'Error! Can\'t load'
+        console.error('Error on load', err.message)
+      })
+    },
+
+    taskDone (task) {
+      task.done = !task.done
+      db.put(task)
+      .catch(err => {
+        console.error('Error on check', err.message)
+      })
     },
 
     remove (task) {
-      let index = this.tasks.indexOf(task)
-      if (index > -1) this.tasks.splice(index, 1)
-    },
-
-    // save each item
-    save () {
-
-    },
-
-    // print loaded docs
-    load () {
-
+      db.remove(task)
+      .catch(err => {
+        console.error('Error on delete', err.message)
+      })
     }
   },
 
@@ -36,3 +61,8 @@ const app = new Vue({
     this.load()
   }
 })
+
+db.changes({
+  since: 'now',
+  live: true
+}).on('change', app.load)
