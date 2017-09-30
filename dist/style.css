@@ -11,7 +11,7 @@ body {
   padding: 10px;
   font-size: 3em;
   font-family: 'EB Garamond', serif;
-  text-shadow: 1px 1px 5px grey;
+  text-shadow: 1px 1px 5px black;
   color: white;
 }
 
@@ -48,7 +48,6 @@ body {
 .task {
   font-size: 1.5em;
   font-family: 'Annie Use Your Telescope', cursive;
-  /*font-family: 'Pangolin', cursive;*/
   overflow: hidden;
   white-space: nowrap;
 }
@@ -58,7 +57,7 @@ body {
 .task::before {
   display: inline-block;
   padding: 5px;
-  content: '\2666';
+  content: '\279B';
   color: black;
 }
 
