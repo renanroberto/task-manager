@@ -4,41 +4,35 @@
     <meta charset='utf-8'>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     <script src="https://unpkg.com/vue@2.4.4/dist/vue.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/pouchdb@6.3.4/dist/pouchdb.min.js"></script>
 
     <link type="text/css" rel="stylesheet" href="./style.css">
-    <link href="https://fonts.googleapis.com/css?family=Annie+Use+Your+Telescope|EB+Garamond" rel="stylesheet">
 
-    <link rel="icon" href="http://findicons.com/files/icons/2796/metro_uinvert_dock/128/tasks.png">
+    <link rel="icon" href="https://image.flaticon.com/icons/png/128/138/138849.png">
 
     <title>Task Manager</title>
   </head>
   <body>
     <div class="center">
-      <div class="title">Task Manager</div>
-      <div id="app" class="container">
-        <div class="new-task">
-          <div class="input-group input-group-lg">
-            <input type="text" class="form-control" v-model="newTask" @keyup.enter="add" maxlength="50" placeholder="Add a new task" autofocus>
-            <span class="input-group-addon noselect" style="cursor: pointer" @click="add">Add</span>
-          </div>
+      <div id="#app" class="container">
+        <div class="title row"> Your Tasks </div>
+
+        <div class="task row noselect">
+          <span class="strike">Any task</span>
+          <span class="checked"></span>
+          <span style="flex: 1"></span>
+          <span class="close">&#10005;</span>
         </div>
-        <br>
-        <div class="view-tasks" v-if="tasks.length > 0">
-          <div class="task-holder" v-for="task in tasks">
-            <span class="task">
-              <span class="noselect" :class="{ 'strike':task.done }" @click="taskDone(task)">{{ task.title }}</span>
-            </span>
-            <span style="flex:1"></span>
-            <span class="cross noselect" @click="remove(task)">&#10005;</span>
-          </div>
+        <div class="task row noselect">
+          <span>Other task</span>
+          <!-- <span class="checked"></span> -->
+          <span style="flex: 1"></span>
+          <span class="close">&#10005;</span>
         </div>
-        <div class="view-tasks" v-else>
-          <div style="width: 100%; text-align: center; font-size: 1.5em; font-family: 'Annie Use Your Telescope', cursive;">
-            <span>{{ status }}</span>
-          </div>
+
+        <div class="new-task row">
+          <input type="text" placeholder="+ add new task">
         </div>
       </div>
     </div>
