@@ -5,10 +5,7 @@ const app = new Vue({
     newTask: '',
     tasks: [
       { text: 'Example task', done: false }
-    ],
-
-    bgColor: '#368fb0',
-    innerColor: '#8ac5db'
+    ]
   },
 
   methods: {
@@ -32,20 +29,6 @@ const app = new Vue({
     // print loaded docs
     load () {
 
-    },
-
-    changeColor () {
-      document.body.style.backgroundColor = this.bgColor
-      document.getElementById('app').style.backgroundColor = this.innerColor
-    }
-  },
-
-  watch: {
-    bgColor: function () {
-      this.changeColor()
-    },
-    innerColor: function () {
-      this.changeColor()
     }
   },
 
