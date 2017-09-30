@@ -10,14 +10,14 @@ body {
   font-weight:400;
   font-size: 0.8em;
 
-  background-color: #ffbe0b;
-  /*background-color: #009999;*/
+  /*background-color: #ffbe0b;*/
+  background-color: #009999;
 }
 
 input {
   font-family: "Space Mono";
   font-size: 1em;
-  color: white;
+  color: grey;
 
   width: 100%;
   outline: none;
@@ -79,7 +79,8 @@ input {
 .new-task {
   display: flex;
 
-  background-color: #1CCAD8;
+  /*background-color: #1CCAD8;*/
+  background-color: #e6e600;
   border-bottom-right-radius: 6px;
   border-bottom-left-radius: 6px;
 }
@@ -121,7 +122,7 @@ input {
   height: 2px;
   background: #00cc00;
   animation-name: strike;
-  animation-duration: 0.3s;
+  animation-duration: 0.1s;
   animation-timing-function: linear;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;

@@ -15,24 +15,20 @@
   </head>
   <body>
     <div class="center">
-      <div id="#app" class="container">
+      <div id="app" class="container">
         <div class="title row"> Your Tasks </div>
 
-        <div class="task row noselect">
-          <span class="strike">Any task</span>
-          <span class="checked"></span>
-          <span style="flex: 1"></span>
-          <span class="close">&#10005;</span>
-        </div>
-        <div class="task row noselect">
-          <span>Other task</span>
-          <!-- <span class="checked"></span> -->
-          <span style="flex: 1"></span>
-          <span class="close">&#10005;</span>
+        <div v-for="task in tasks">
+          <div class="task row noselect" @click="taskDone(task)">
+            <span :class="{ strike: task.done }">{{ task.title }}</span>
+            <span class="checked" v-if="task.done"></span>
+            <span style="flex: 1"></span>
+            <span class="close" @click.prevent.stop="remove(task)">&#10005;</span>
+          </div>
         </div>
 
         <div class="new-task row">
-          <input type="text" placeholder="+ add new task">
+          <input type="text" v-model="newTask" @keyup.enter="add" placeholder="+ add new task" autofocus>
         </div>
       </div>
     </div>

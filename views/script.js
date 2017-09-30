@@ -17,6 +17,8 @@ const app = new Vue({
         done: false
       }
 
+      if (this.newTask === '') return 0
+
       this.newTask = ''
 
       db.put(task)
