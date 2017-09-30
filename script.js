@@ -1,5 +1,3 @@
-const db = new PouchDB('tasks')
-
 const app = new Vue({
   el: '#app',
 
@@ -26,18 +24,12 @@ const app = new Vue({
 
     // save each item
     save () {
-      db.put(this.toSave, (err, res) => {
-        if (!err) console.log("Save succeful!")
-        else console.log('ERROR: ' + err)
-      })
+
     },
 
     // print loaded docs
     load () {
-      db.allDocs({include_docs: true, descending: true}, function(err, doc) {
-        if (!err) console.log(doc.rows)
-        else console.log('ERROR: ' + err)
-      })
+      
     }
   },
 
