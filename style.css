@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  background-color: #368fb0;
+  background-color: #009999;
 }
 
 .center {
@@ -24,7 +24,7 @@ body {
   align-items: center;
 
   border-radius: 10px;
-  background-color: #8ac5db;
+  background-color: #00e6e6;
 }
 
 .new-task {
