@@ -6,6 +6,7 @@
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     <script src="https://unpkg.com/vue@2.4.4/dist/vue.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/pouchdb@6.3.4/dist/pouchdb.min.js"></script>
 
     <link type="text/css" rel="stylesheet" href="./style.css">
     <link href="https://fonts.googleapis.com/css?family=Pangolin|Playfair+Display+SC" rel="stylesheet">
@@ -16,7 +17,7 @@
   </head>
   <body>
     <div class="center">
-      <div class="title">Task Manager</div>
+      <div class="title">Task Manager - Teste</div>
       <div id="app" class="container">
         <div class="new-task">
           <div class="input-group input-group-lg">
@@ -26,6 +27,9 @@
         </div>
         <br>
         <div class="view-tasks">
+          <div style="align-self: flex-end; padding-top: 10px">
+            <button class="btn btn-success" @click="save">Save</button>
+          </div>
           <div class="task-holder" v-for="task in tasks">
             <span class="task">
               <span class="noselect" :class="{ 'strike':task.done }" @click="() => { task.done = !task.done }">{{ task.text }}</span>
