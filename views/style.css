@@ -10,7 +10,7 @@ body {
 .title {
   padding: 10px;
   font-size: 3em;
-  font-family: 'Playfair Display SC', serif;
+  font-family: 'EB Garamond', serif;
   text-shadow: 1px 1px 5px grey;
   color: white;
 }
@@ -47,7 +47,8 @@ body {
 
 .task {
   font-size: 1.5em;
-  font-family: 'Pangolin', cursive;
+  font-family: 'Annie Use Your Telescope', cursive;
+  /*font-family: 'Pangolin', cursive;*/
   overflow: hidden;
   white-space: nowrap;
 }
