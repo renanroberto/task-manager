@@ -18,6 +18,10 @@ const app = new Vue({
       }
 
       if (this.newTask === '') return 0
+      else if (this.newTask.length > 50) {
+        this.newTask = ''
+        return 0
+      }
 
       this.newTask = ''
 

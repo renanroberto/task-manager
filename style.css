@@ -32,14 +32,14 @@ input {
   height: 100vh;
 
   justify-content: center;
-  align-items: baseline;
+  align-items: center;
 
   overflow-x: hidden;
 }
 
 .container {
   width: 600px;
-  margin: 100px auto;
+  overflow: hidden;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   border-radius:6px;
   background-color:white;
@@ -78,6 +78,11 @@ input {
 .task:hover {
   cursor: pointer;
   background-color: #f2f2f2;
+}
+
+.task-title {
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .new-task {
