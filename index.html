@@ -18,12 +18,14 @@
       <div id="app" class="container">
         <div class="title row"> Your Tasks </div>
 
-        <div v-for="task in tasks">
-          <div class="task row noselect" @click="taskDone(task)">
-            <span :class="{ strike: task.done }">{{ task.title }}</span>
-            <span class="checked" v-if="task.done"></span>
-            <span style="flex: 1"></span>
-            <span class="close" @click.prevent.stop="remove(task)">&#10005;</span>
+        <div class="task-view">
+          <div v-for="task in tasks">
+            <div class="task row noselect" @click="taskDone(task)">
+              <span :class="{ strike: task.done }" style="overflow-x: hidden">{{ task.title }}</span>
+              <span class="checked" v-if="task.done"></span>
+              <span style="flex: 1"></span>
+              <span class="close" @click.prevent.stop="remove(task)">&#10005;</span>
+            </div>
           </div>
         </div>
 

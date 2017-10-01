@@ -62,6 +62,11 @@ input {
   color: white;
 }
 
+.task-view {
+  max-height: 350px;
+  overflow: auto;
+}
+
 .task {
   display: flex;
 
@@ -69,9 +74,6 @@ input {
 
   font-weight:bold;
   color: grey;
-}
-.task:last-child{
-  border: none;
 }
 .task:hover {
   cursor: pointer;
@@ -81,7 +83,6 @@ input {
 .new-task {
   display: flex;
 
-  /*background-color: #1CCAD8;*/
   background-color: #e6e600;
   border-bottom-right-radius: 6px;
   border-bottom-left-radius: 6px;
@@ -138,4 +139,15 @@ input {
         -ms-user-select: none; /* Internet Explorer/Edge */
             user-select: none; /* Non-prefixed version, currently
                                   supported by Chrome and Opera */
+}
+
+::-webkit-scrollbar-track {
+    background-color: #F4F4F4;
+}
+::-webkit-scrollbar {
+    width: 6px;
+    background: #F4F4F4;
+}
+::-webkit-scrollbar-thumb {
+    background: #dad7d7;
 }
