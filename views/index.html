@@ -30,7 +30,8 @@
         </div>
 
         <div class="new-task row">
-          <input type="text" v-model="newTask" @keyup.enter="add" maxlength="50" placeholder="+ add new task" autofocus>
+          <span style="flex: 1"><input type="text" v-model="newTask" @keyup.enter="add" maxlength="50" placeholder="+ add new task" autofocus></span>
+          <span class="button" @click="add">&#10146;</span>
         </div>
       </div>
     </div>

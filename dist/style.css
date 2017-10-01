@@ -92,6 +92,12 @@ input {
   border-bottom-left-radius: 6px;
 }
 
+.button {
+  cursor: pointer;
+  font-size: 2.5em;
+  color: grey;
+}
+
 .close {
   padding-left: 4px;
   padding-right: 4px;
