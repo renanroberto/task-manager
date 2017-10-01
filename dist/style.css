@@ -92,6 +92,12 @@ input {
   border-bottom-left-radius: 6px;
 }
 
+.char-count {
+  padding-right: 5px;
+  font-size: 0.9em;
+  color: grey;
+}
+
 .button {
   cursor: pointer;
   font-size: 2.5em;
