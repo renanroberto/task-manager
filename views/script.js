@@ -60,6 +60,17 @@ const app = new Vue({
       .catch(err => {
         console.error('Error on delete', err.message)
       })
+    },
+
+    destroy () {
+      db.destroy()
+      .then(() => {
+        console.log('Database deleted =( It is going to a better place... RIP')
+        location.reload()
+      })
+      .catch(err => {
+        console.log(err.message)
+      })
     }
   },
 
